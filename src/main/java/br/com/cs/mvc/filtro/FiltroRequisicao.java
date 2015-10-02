@@ -35,7 +35,6 @@ public class FiltroRequisicao implements Filter {
 			resp.sendRedirect("views/login.jsp");
 			return;
 		}
-//
 		if (urlDeAcesso.contains("/resources/") || urlDeAcesso.contains("/rest")) {
 			chain.doFilter(request, resp);
 			return;
