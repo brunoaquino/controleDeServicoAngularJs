@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br" ng-app="csAdminLogin">
+<html lang="pt-br" ng-app="csAdmin">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Bruno">
 
     <title>Controle de Serviço</title>
 
@@ -23,12 +23,13 @@
     <link href="../resources/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     
     <script src="../resources/js/lib/angular.min.js"></script>
-	<script src="../resources/js/lib/angular-animate.min.js"></script>
+<!-- 	<script src="../resources/js/lib/angular-animate.min.js"></script> -->
     <script src="../resources/js/lib/angular-route.min.js"></script>
-	<script src="../resources/js/mainLogin.js"></script>
-	
+    
 	<script src="../resources/js/minhasLibs/request.js" charset="utf-8"></script>
 	<script src="../resources/js/minhasLibs/enums.js" charset="utf-8"></script>
+	
+	<script src="../resources/js/main.js"></script>
 	
 	<script src="../resources/js/controllers/login-controller.js"></script>
 

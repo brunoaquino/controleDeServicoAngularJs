@@ -31,8 +31,6 @@
 		<script src="../resources/js/lib/angular-animate.min.js"></script>
         <script src="../resources/js/lib/angular-route.min.js"></script>
 		<script src="../resources/js/main.js"></script>
-		<script src="../resources/js/controllers/fotos-controller.js"></script>
-		<script src="../resources/js/directives/minhas-diretivas.js"></script>
 	</head>
 
 	<body>
