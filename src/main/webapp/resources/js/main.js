@@ -1,6 +1,5 @@
 var modulo = angular.module('csAdmin', ['minhasDiretivas','ngAnimate', 'ngRoute']);
-var usuario; 
-var pathSistema = 'controleDeServicoAngularJs/views'
+var pathSistema = 'controleDeServicoAngularJs/views/'
 modulo.config(function($routeProvider, $locationProvider) {
 
 	$locationProvider.html5Mode({
@@ -8,10 +7,10 @@ modulo.config(function($routeProvider, $locationProvider) {
 	  requireBase: false
 	});
 
-	$routeProvider.when('/dashBoard', {
+	$routeProvider.when(pathSistema + 'dashBoard', {
 		templateUrl: pathSistema + 'dashBoardTemplate.jsp'
 	});
 
-	$routeProvider.otherwise({redirectTo: '/dashBoard'});
+	$routeProvider.otherwise({redirectTo: pathSistema + 'dashBoard'});
 
 });

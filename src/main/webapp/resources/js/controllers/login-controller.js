@@ -15,10 +15,10 @@ modulo.controller( 'LoginController', function($scope, $http) {
     }
     
     function autentica(usuario){
-    	call('http://localhost:8080/controleDeServico/rest/autenticacao/autentica', usuario)
+    	call('http://localhost:8080/controleDeServicoAngularJs/rest/autenticacao/autentica', usuario)
 		.success(function(retorno){
 			usuarioAutenticado = retorno;
-			window.location = "http://localhost:8080/controleDeServico/views/index.jsp";
+			window.location = "http://localhost:8080/controleDeServicoAngularJs/views/index.jsp";
 		})
 		.error(function(msg){
 			trataMensagemDeErro(msg);
