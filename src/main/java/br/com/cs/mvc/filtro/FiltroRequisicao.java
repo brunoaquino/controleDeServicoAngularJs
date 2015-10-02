@@ -32,6 +32,10 @@ public class FiltroRequisicao implements Filter {
 		HttpServletResponse resp = (HttpServletResponse) servletResponse;
 
 		String urlDeAcesso = req.getRequestURI();
+		if(urlDeAcesso.equals("/controleDeServicoAngularJs/")){
+			resp.sendRedirect("views/login.jsp");
+			return;
+		}
 
 		if (urlDeAcesso.contains("/resources/") || urlDeAcesso.contains("/rest")) {
 			chain.doFilter(request, resp);
