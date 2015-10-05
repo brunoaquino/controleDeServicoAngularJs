@@ -32,15 +32,29 @@ public class FiltroRequisicao implements Filter {
 
 		String urlDeAcesso = req.getRequestURI();
 		if(urlDeAcesso.equals("/controleDeServicoAngularJs/")){
-			resp.sendRedirect("views/login.jsp");
-			return;
+			if(isUsuarioLogado(req)){
+				resp.sendRedirect("views/index.jsp");
+				return;
+			}else{
+				resp.sendRedirect("views/login.jsp");
+				return;
+			}
 		}
+//		if(urlDeAcesso.equals("/controleDeServicoAngularJs/")){
+//			if(isUsuarioLogado(req)){
+//				resp.sendRedirect("views/index.jsp");
+//				return;
+//			}else{
+//				resp.sendRedirect("views/login.jsp");
+//				return;
+//			}
+//		}
 		if (urlDeAcesso.contains("/resources/") || urlDeAcesso.contains("/rest")) {
 			chain.doFilter(request, resp);
 			return;
 		}
-		if (!urlDeAcesso.contains("index.jsp") && !isUsuarioLogado(req)) {
-			resp.sendRedirect("index.jsp");
+		if (!urlDeAcesso.contains("login.jsp") && !isUsuarioLogado(req)) {
+			resp.sendRedirect("login.jsp");
 			return;
 		}
 
