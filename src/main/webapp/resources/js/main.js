@@ -10,6 +10,11 @@ modulo.config(function($routeProvider, $locationProvider) {
 	$routeProvider.when('/dashBoard', {
 		templateUrl: 'controleDeServicoAngularJs/views/dashBoardTemplate.jsp'
 	});
+	
+	$routeProvider.when('/cadastroDeCliente', {
+		templateUrl: 'controleDeServicoAngularJs/views/cadastroDeCliente.jsp',
+		controller: 'CadastroDeClienteController'
+	});
 
 	$routeProvider.otherwise({redirectTo: '/dashBoard'});
 

@@ -63,7 +63,7 @@ window.operateEventsCadastroDeCliente = {
 				row.dataDeNascimento = new Date(row.dataDeNascimento);
 			}
 			
-			call('http://localhost:8080/controleDeServico/rest/cliente/delete',row).success(function(retorno) {
+			call('http://localhost:8080/controleDeServicoAngularJsAngularJs/rest/cliente/delete',row).success(function(retorno) {
 				alert("Resgistro excluído com sucesso");
 				
 				atualizaTable();
@@ -76,7 +76,7 @@ window.operateEventsCadastroDeCliente = {
 };
 
 function buscaClientes() {
-	call('http://localhost:8080/controleDeServico/rest/cliente/getClientes', {})
+	call('http://localhost:8080/controleDeServicoAngularJs/rest/cliente/getClientes', {})
 			.success(function(retorno) {
 				listaDeClientes = retorno;
 			}).error(function(msg) {
@@ -115,7 +115,7 @@ modulo.controller('CadastroDeClienteController', function($scope, $http) {
 			
 			isDadosValidos(cliente);
 			
-			call('http://localhost:8080/controleDeServico/rest/cliente/salva',cliente).success(function(retorno) {
+			call('http://localhost:8080/controleDeServicoAngularJs/rest/cliente/salva',cliente).success(function(retorno) {
 				limpaFormulario();
 				alert("Cliente criado com sucesso");
 				atualizaTable();
@@ -151,7 +151,7 @@ modulo.controller('CadastroDeClienteController', function($scope, $http) {
 			isDadosValidos(clienteSendoEditado);
 		
 		if (isDadosValidos(clienteSendoEditado)) {
-			call('http://localhost:8080/controleDeServico/rest/cliente/atualiza',clienteSendoEditado).success(function(retorno) {
+			call('http://localhost:8080/controleDeServicoAngularJs/rest/cliente/atualiza',clienteSendoEditado).success(function(retorno) {
 				limpaFormulario();
 				alert("Cliente editado com sucesso");
 				atualizaTable();

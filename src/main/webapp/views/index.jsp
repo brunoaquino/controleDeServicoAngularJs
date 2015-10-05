@@ -27,15 +27,31 @@
 		<!-- Custom Fonts -->
 		<link href="../resources/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		
+		<script src="../resources/js/lib/jquery-1.10.2.js" charset="utf-8"></script>
+		
 		<script src="../resources/js/lib/angular.min.js"></script>
 		<script src="../resources/js/lib/angular-animate.min.js"></script>
         <script src="../resources/js/lib/angular-route.min.js"></script>
 		<script src="../resources/js/main.js"></script>
+		<script src="../resources/js/controllers/index-controller.js"></script>
+		
+		<script src="../resources/js/minhasLibs/request.js"></script>
+		<script src="../resources/js/minhasLibs/enums.js" charset="utf-8"></script>
+		<script src="../resources/js/minhasLibs/tableFormatters.js" charset="utf-8"></script>
+		
+		
+		<script src="../resources/js/controllers/login-controller.js" charset="utf-8"></script>
+		<script src="../resources/js/controllers/index-controller.js" charset="utf-8"></script>
+		<script src="../resources/js/controllers/cadastroDeUsuario-controller.js" charset="utf-8"></script>
+		<script src="../resources/js/controllers/cadastroDeServico-controller.js" charset="utf-8"></script>
+		<script src="../resources/js/controllers/cadastroDeFuncionario-controller.js" charset="utf-8"></script>
+		<script src="../resources/js/controllers/cadastroDeCliente-controller.js" charset="utf-8"></script>
+		<script src="../resources/js/controllers/gerenciadorDeServicos-controller.js" charset="utf-8"></script>
 	</head>
 
 	<body>
 
-		<div id="wrapper">
+		<div id="wrapper" ng-controller=IndexController>
 			<!-- Navigation -->
 			<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
 				<div class="navbar-header">
@@ -45,7 +61,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+					<a class="navbar-brand" href="index.html">Cs Admin</a>
 				</div>
 				<!-- /.navbar-header -->
 
@@ -55,12 +71,21 @@
 							<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
 						</a>
 						<ul class="dropdown-menu dropdown-user">
-							<li><a href="#"><i class="fa fa-user fa-fw"></i> Perfil de UsuÃ¡rio</a>
+							<li>
+								<a href="#">
+									<i class="fa fa-user fa-fw"></i> Perfil de Usuário
+								</a>
 							</li>
-							<li><a href="#"><i class="fa fa-gear fa-fw"></i> ConfiguraÃ§Ãµes</a>
+							<li>
+								<a href="#">
+									<i class="fa fa-gear fa-fw"></i>Configurações
+								</a>
 							</li>
 							<li class="divider"></li>
-							<li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
+							<li>
+								<a ng-click="logout()">
+									<i class="fa fa-sign-out fa-fw" ></i> Sair
+								</a>
 							</li>
 						</ul>
 						<!-- /.dropdown-user -->
@@ -74,7 +99,7 @@
 						<ul class="nav" id="side-menu">
 							<li class="sidebar-search">
 								<div class="input-group custom-search-form">
-									<input type="text" class="form-control" placeholder="Search...">
+									<input type="text" class="form-control" placeholder="Procurar...">
 									<span class="input-group-btn">
 									<button class="btn btn-default" type="button">
 										<i class="fa fa-search"></i>
@@ -84,16 +109,25 @@
 								<!-- /input-group -->
 							</li>
 							<li>
-								<a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+								<a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Home</a>
 							</li>
 							<li>
-								<a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+								<a href="#">
+									<i class="fa fa-paste fa-fw"></i> Cadastros
+									<span class="fa arrow"></span>
+								</a>
 								<ul class="nav nav-second-level">
 									<li>
-										<a href="flot.html">Flot Charts</a>
+										<a href="/cadastroDeCliente">Cliente</a>
 									</li>
 									<li>
-										<a href="morris.html">Morris.js Charts</a>
+										<a href="#">Funcionário</a>
+									</li>
+									<li>
+										<a href="#">Serviço</a>
+									</li>
+									<li>
+										<a href="#">Usuário</a>
 									</li>
 								</ul>
 								<!-- /.nav-second-level -->
