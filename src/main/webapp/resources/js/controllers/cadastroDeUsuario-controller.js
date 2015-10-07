@@ -62,7 +62,7 @@ window.operateEventsCadastroDeUsuario = {
 				row.dataDeNascimento = new Date(row.dataDeNascimento);
 			}
 			
-			call('http://localhost:8080/controleDeServico/rest/usuario/delete',row).success(function(retorno) {
+			call('http://localhost:8080/controleDeServicoAngularJs/rest/usuario/delete',row).success(function(retorno) {
 				alert("Resgistro excluído com sucesso");
 				
 				atualizaTableUsuario();
@@ -75,7 +75,7 @@ window.operateEventsCadastroDeUsuario = {
 };
 
 function buscaUsuarios() {
-	call('http://localhost:8080/controleDeServico/rest/usuario/getUsuarios', {})
+	call('http://localhost:8080/controleDeServicoAngularJs/rest/usuario/getUsuarios', {})
 			.success(function(retorno) {
 				listaDeUsuarios = retorno;
 			}).error(function(msg) {
@@ -102,7 +102,7 @@ modulo.controller('CadastroDeUsuarioController', function($scope, $http) {
 			
 			isDadosValidos(usuario);
 			
-//			call('http://localhost:8080/controleDeServico/rest/usuario/salva',usuario).success(function(retorno) {
+//			call('http://localhost:8080/controleDeServicoAngularJs/rest/usuario/salva',usuario).success(function(retorno) {
 //				limpaFormulario();
 //				alert("Usuáio criado com sucesso");
 //				atualizaTableUsuario();
@@ -138,7 +138,7 @@ modulo.controller('CadastroDeUsuarioController', function($scope, $http) {
 			isDadosValidos(usuarioSendoEditado);
 		
 		if (isDadosValidos(usuarioSendoEditado)) {
-			call('http://localhost:8080/controleDeServico/rest/usuario/atualiza',usuarioSendoEditado).success(function(retorno) {
+			call('http://localhost:8080/controleDeServicoAngularJs/rest/usuario/atualiza',usuarioSendoEditado).success(function(retorno) {
 				limpaFormulario();
 				alert("Usuáio editado com sucesso");
 				atualizaTableUsuario();

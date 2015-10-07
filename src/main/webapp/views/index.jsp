@@ -124,13 +124,21 @@
 										<a href="/cadastroDeFuncionario">Funcionário</a>
 									</li>
 									<li>
-										<a href="#">Serviço</a>
-									</li>
-									<li>
-										<a href="#">Usuário</a>
+										<a href="/cadastroDeServico">Serviço</a>
 									</li>
 								</ul>
 								<!-- /.nav-second-level -->
+							</li>
+							<li>
+								<a href="index.html">
+									<i class="fa fa-folder-open fa-fw"></i>Adminstração
+									<span class="fa arrow"></span>
+								</a>
+								<ul class="nav nav-second-level">
+									<li>
+										<a href="/cadastroDeUsuario">Usuário</a>
+									</li>
+								</ul>
 							</li>
 						</ul>
 					</div>

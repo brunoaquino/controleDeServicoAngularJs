@@ -20,6 +20,16 @@ modulo.config(function($routeProvider, $locationProvider) {
 		templateUrl: 'controleDeServicoAngularJs/views/cadastroDeFuncionario.jsp',
 		controller: 'CadastroDeFuncionarioController'
 	});
+	
+	$routeProvider.when('/cadastroDeServico', {
+		templateUrl: 'controleDeServicoAngularJs/views/cadastroDeServico.jsp',
+		controller: 'CadastroDeServicoController'
+	});
+	
+	$routeProvider.when('/cadastroDeUsuario', {
+		templateUrl: 'controleDeServicoAngularJs/views/cadastroDeUsuario.jsp',
+		controller: 'CadastroDeUsuarioController'
+	});
 
 	$routeProvider.otherwise({redirectTo: '/dashBoard'});
 

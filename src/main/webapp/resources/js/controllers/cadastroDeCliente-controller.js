@@ -62,8 +62,7 @@ window.operateEventsCadastroDeCliente = {
 			if(row.dataDeNascimento != undefined && row.dataDeNascimento != ""){
 				row.dataDeNascimento = new Date(row.dataDeNascimento);
 			}
-			
-			call('http://localhost:8080/controleDeServicoAngularJsAngularJs/rest/cliente/delete',row).success(function(retorno) {
+			call('http://localhost:8080/controleDeServicoAngularJs/rest/cliente/delete',row).success(function(retorno) {
 				alert("Resgistro excluído com sucesso");
 				
 				atualizaTable();

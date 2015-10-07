@@ -31,7 +31,7 @@ window.operateEventsCadastroDeServico = {
 	},
 	'click .remove' : function(e, value, row, index) {
 		if(confirm("Excluir Registro?")){
-			call('http://localhost:8080/controleDeServico/rest/servico/delete',row).success(function(retorno) {
+			call('http://localhost:8080/controleDeServicoAngularJs/rest/servico/delete',row).success(function(retorno) {
 				alert("Resgistro excluído com sucesso");
 				
 				atualizaTableServico();
@@ -44,7 +44,7 @@ window.operateEventsCadastroDeServico = {
 };
 
 function buscaServicos() {
-	call('http://localhost:8080/controleDeServico/rest/servico/getServicos', {})
+	call('http://localhost:8080/controleDeServicoAngularJs/rest/servico/getServicos', {})
 			.success(function(retorno) {
 				listaDeServicos = retorno;
 			}).error(function(msg) {
@@ -74,7 +74,7 @@ modulo.controller('CadastroDeServicoController', function($scope, $http) {
 		servico.preco = $('#inputPreco').maskMoney('unmasked')[0]; 
 		
 		if (isDadosValidos(servico)) {
-			call('http://localhost:8080/controleDeServico/rest/servico/salva',servico).success(function(retorno) {
+			call('http://localhost:8080/controleDeServicoAngularJs/rest/servico/salva',servico).success(function(retorno) {
 				limpaFormulario();
 				alert("Serviço criado com sucesso");
 				atualizaTableServico();
@@ -91,7 +91,7 @@ modulo.controller('CadastroDeServicoController', function($scope, $http) {
 			servicoSendoEditado.descricao = $('#inputDescricao').val();
 		
 		if (isDadosValidos(servicoSendoEditado)) {
-			call('http://localhost:8080/controleDeServico/rest/servico/atualiza',servicoSendoEditado).success(function(retorno) {
+			call('http://localhost:8080/controleDeServicoAngularJs/rest/servico/atualiza',servicoSendoEditado).success(function(retorno) {
 				limpaFormulario();
 				alert("Serviço editado com sucesso");
 				atualizaTableServico();

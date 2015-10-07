@@ -63,7 +63,7 @@ window.operateEventsCadastroDeFuncionario = {
 				row.dataDeNascimento = new Date(row.dataDeNascimento);
 			}
 			
-			call('http://localhost:8080/controleDeServico/rest/funcionario/delete',row).success(function(retorno) {
+			call('http://localhost:8080/controleDeServicoAngularJs/rest/funcionario/delete',row).success(function(retorno) {
 				alert("Resgistro excluído com sucesso");
 				
 				atualizaTableFuncionario();
@@ -76,7 +76,7 @@ window.operateEventsCadastroDeFuncionario = {
 };
 
 function buscaFuncionarios() {
-	call('http://localhost:8080/controleDeServico/rest/funcionario/getFuncionarios', {})
+	call('http://localhost:8080/controleDeServicoAngularJs/rest/funcionario/getFuncionarios', {})
 			.success(function(retorno) {
 				listaDeFuncionarios = retorno;
 			}).error(function(msg) {
@@ -115,7 +115,7 @@ modulo.controller('CadastroDeFuncionarioController', function($scope, $http) {
 			
 			isDadosValidos(funcionario);
 			
-			call('http://localhost:8080/controleDeServico/rest/funcionario/salva',funcionario).success(function(retorno) {
+			call('http://localhost:8080/controleDeServicoAngularJs/rest/funcionario/salva',funcionario).success(function(retorno) {
 				limpaFormulario();
 				alert("Funcionário criado com sucesso");
 				atualizaTableFuncionario();
@@ -151,7 +151,7 @@ modulo.controller('CadastroDeFuncionarioController', function($scope, $http) {
 			isDadosValidos(funcionarioSendoEditado);
 		
 		if (isDadosValidos(funcionarioSendoEditado)) {
-			call('http://localhost:8080/controleDeServico/rest/funcionario/atualiza',funcionarioSendoEditado).success(function(retorno) {
+			call('http://localhost:8080/controleDeServicoAngularJs/rest/funcionario/atualiza',funcionarioSendoEditado).success(function(retorno) {
 				limpaFormulario();
 				alert("Funcionário editado com sucesso");
 				atualizaTableFuncionario();
