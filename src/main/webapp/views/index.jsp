@@ -109,7 +109,7 @@
 								<!-- /input-group -->
 							</li>
 							<li>
-								<a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Home</a>
+								<a href="/home"><i class="fa fa-dashboard fa-fw"></i> Home</a>
 							</li>
 							<li>
 								<a href="#">
